@@ -13,26 +13,26 @@ export default function Header() {
     <header className={classes.header}>
       <div className={classes.container}>
         <Link to="/" className={classes.logo}>
-          Food Mine!
+        <img className={classes.headerimage} src="/food-dinner-svgrepo-com.svg"  alt='cart' />
         </Link>
         <nav>
           <ul>
             {user ? (
               <li className={classes.menu_container}>
-                <Link to="/dashboard">{user.name}</Link>
+                <Link to="/dashboard"><img className={classes.headerimage} src="/user-svgrepo-com.svg"  alt='cart' /></Link>
                 <div className={classes.menu}>
                   <Link to="/profile">Profile</Link>
                   <Link to="/orders">Orders</Link>
-                  <a onClick={logout}>Logout</a>
+                  <a onClick={logout}>logout</a>
                 </div>
               </li>
             ) : (
-              <Link to="/login">Login</Link>
+              <Link to="/login"><img className={classes.headerimage} src="/user-svgrepo-com.svg"  alt='cart' /></Link>
             )}
 
             <li>
               <Link to="/cart">
-                Cart
+              <img className={classes.headerimage} src="/cart-plus-svgrepo-com.svg"  alt='cart' />
                 {cart.totalCount > 0 && (
                   <span className={classes.cart_count}>{cart.totalCount}</span>
                 )}
